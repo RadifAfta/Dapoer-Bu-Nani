@@ -49,7 +49,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-secondary-warm from-gray-900 to-gray-800 text-white">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -101,7 +101,7 @@ const Menu = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-4 shadow-lg"
+          className="bg-white backdrop-blur-lg rounded-2xl p-4 shadow-lg"
         >
           <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
             <CategoryBadge 
@@ -181,7 +181,7 @@ const Menu = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <p className="mb-6 text-xl text-gray-300">Ingin memesan menu spesial yang tidak terlihat di sini?</p>
+          <p className="mb-6 text-xl text-gray-500">Ingin memesan menu spesial yang tidak terlihat di sini?</p>
           
           <motion.a
             whileHover={{ scale: 1.05 }}

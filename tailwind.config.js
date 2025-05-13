@@ -14,6 +14,7 @@ export default {
         secondary: {
           DEFAULT: '#F5F5DC', // krem
           dark: '#E6E6CA',
+          warm: '#FAF0E6'
         },
         accent: {
           DEFAULT: '#B22222', // merah bata

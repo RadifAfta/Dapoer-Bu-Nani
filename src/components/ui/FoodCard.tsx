@@ -21,7 +21,7 @@ const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
         visible: { opacity: 1, y: 0 }
       }}
       whileHover={{ y: -10, transition: { duration: 0.3 } }}
-      className="bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
+      className="bg-white backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
       onClick={handleCardClick}
     >
       <div className="relative h-56 overflow-hidden">
@@ -63,7 +63,7 @@ const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
       
       <div className="p-4">
         <h3 className="text-xl font-bold mb-2">{item.name}</h3>
-        <p className="text-gray-300 text-sm line-clamp-2">{item.description}</p>
+        <p className="text-gray-500 text-sm line-clamp-2">{item.description}</p>
         
         <div className="mt-4 flex justify-between items-center">
           <div className="flex">
