@@ -117,14 +117,14 @@ const HowToOrder = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex justify-center items-center">
+      <div className="min-h-screen bg-secondary-warm from-gray-900 to-gray-800 flex justify-center items-center">
         <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-accent"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white pb-16">
+    <div className="min-h-screen bg-secondary-warm from-gray-900 to-gray-800 text-white pb-16">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -177,7 +177,7 @@ const HowToOrder = () => {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <div className="absolute left-[26px] top-[70px] bottom-[70px] w-1 bg-gray-700 rounded-full hidden md:block" />
+          <div className="absolute left-[26px] top-[70px] bottom-[70px] w-1 bg-gray-500 rounded-full hidden md:block" />
           
           <motion.div
             variants={containerVariants}
@@ -204,12 +204,12 @@ const HowToOrder = () => {
                   </motion.div>
                 </div>
                 
-                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+                <div className="bg-secondary backdrop-blur-sm rounded-xl p-6 shadow-lg">
                   <h3 className="text-xl font-bold mb-2 flex items-center">
                     <span className="text-accent mr-2">#{step.number}</span> 
                     {step.title}
                   </h3>
-                  <p className="text-gray-300 mb-4">{step.description}</p>
+                  <p className="text-gray-500 mb-4">{step.description}</p>
                   
                   {step.link && (
                     <a 
@@ -247,7 +247,7 @@ const HowToOrder = () => {
               <motion.div
                 key={index}
                 whileHover={{ y: -5 }}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg"
+                className="bg-secondary backdrop-blur-sm rounded-xl overflow-hidden shadow-lg"
               >
                 <div className={`${method.color} p-6 flex justify-between items-center`}>
                   <h3 className="text-xl font-bold">{method.title}</h3>
@@ -256,7 +256,7 @@ const HowToOrder = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-300">{method.description}</p>
+                  <p className="text-gray-500">{method.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -278,7 +278,7 @@ const HowToOrder = () => {
               <motion.div
                 key={index}
                 whileHover={{ y: -5 }}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg"
+                className="bg-secondary backdrop-blur-sm rounded-xl overflow-hidden shadow-lg"
               >
                 <div className={`${method.color} p-5 text-center`}>
                   <div className="mx-auto p-3 bg-white/20 backdrop-blur-sm rounded-full inline-flex">
@@ -287,7 +287,7 @@ const HowToOrder = () => {
                 </div>
                 <div className="p-5">
                   <h3 className="text-lg font-bold mb-2 text-center">{method.title}</h3>
-                  <p className="text-gray-300 text-sm text-center">{method.description}</p>
+                  <p className="text-gray-500 text-sm text-center">{method.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -389,7 +389,7 @@ const FAQ = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
-    <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg">
+    <div className="bg-secondary backdrop-blur-sm rounded-xl overflow-hidden shadow-lg">
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-5 text-left flex justify-between items-center"
@@ -411,8 +411,8 @@ const FAQ = ({ question, answer }: { question: string; answer: string }) => {
         animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
         className="overflow-hidden"
       >
-        <div className="p-5 pt-0 border-t border-gray-700">
-          <p className="text-gray-300">{answer}</p>
+        <div className="p-5 pt-0 border-t border-gray-300">
+          <p className="text-gray-500">{answer}</p>
         </div>
       </motion.div>
     </div>

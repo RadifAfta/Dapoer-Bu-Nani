@@ -11,7 +11,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Budi Santoso",
-    avatar: "/api/placeholder/60/60", // Placeholder, ganti dengan gambar asli
+    avatar: "src/assets/pevita.jpeg", // Placeholder, ganti dengan gambar asli
     content: "Rasa masakan Bu Nani selalu ngingetin masakan Ibu saya di kampung 😭 Tiap kali makan nasi uduknya, serasa pulang kampung!",
     rating: 5,
     date: "3 Mei 2025"

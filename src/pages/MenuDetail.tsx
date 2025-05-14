@@ -74,25 +74,25 @@ const MenuDetail = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex justify-center items-center">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-accent"></div>
+      <div className="min-h-screen bg-white flex justify-center items-center">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     );
   }
 
   if (!menuItem) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex flex-col justify-center items-center p-4 text-white">
+      <div className="min-h-screen bg-white flex flex-col justify-center items-center p-4 text-gray-800">
         <img 
           src="/api/placeholder/240/240" 
           alt="Menu not found" 
           className="w-32 h-32 mb-6 opacity-40"
         />
         <h2 className="text-2xl font-bold mb-4">Menu Tidak Ditemukan</h2>
-        <p className="text-gray-300 mb-8 text-center">Maaf, menu yang Anda cari tidak tersedia atau telah dihapus.</p>
+        <p className="text-gray-600 mb-8 text-center">Maaf, menu yang Anda cari tidak tersedia atau telah dihapus.</p>
         <button 
           onClick={() => navigate('/menu')}
-          className="bg-accent hover:bg-accent/80 text-white px-8 py-3 rounded-full flex items-center"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full flex items-center"
         >
           <FaArrowLeft className="mr-2" /> Kembali ke Menu
         </button>
@@ -101,10 +101,10 @@ const MenuDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white pb-20">
-      {/* Image Hero Section with Glassmorphism Overlay */}
+    <div className="min-h-screen bg-secondary-warm text-gray-800 pb-20">
+      {/* Image Hero Section with Subtle Overlay */}
       <div className="relative h-80 sm:h-96 w-full overflow-hidden">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-black/20 z-10"></div>
         <img 
           src={menuItem.image || "/api/placeholder/800/600"}
           alt={menuItem.name}
@@ -114,7 +114,7 @@ const MenuDetail = () => {
         {/* Back Button */}
         <button 
           onClick={() => navigate('/menu')}
-          className="absolute top-6 left-6 z-20 bg-black/50 hover:bg-black/70 p-3 rounded-full backdrop-blur-sm transition-all"
+          className="absolute top-6 left-6 z-20 bg-white/80 hover:bg-white p-3 rounded-full backdrop-blur-sm transition-all text-gray-800"
         >
           <FaArrowLeft size={20} />
         </button>
@@ -122,7 +122,7 @@ const MenuDetail = () => {
         {/* Share Button */}
         <button 
           onClick={() => alert('Share functionality would go here')}
-          className="absolute top-6 right-6 z-20 bg-black/50 hover:bg-black/70 p-3 rounded-full backdrop-blur-sm transition-all"
+          className="absolute top-6 right-6 z-20 bg-white/80 hover:bg-white p-3 rounded-full backdrop-blur-sm transition-all text-gray-800"
         >
           <FaShareAlt size={20} />
         </button>
@@ -130,17 +130,17 @@ const MenuDetail = () => {
         {/* Badge Indicators */}
         <div className="absolute bottom-6 left-6 z-20 flex gap-2">
           {menuItem.isBestseller && (
-            <span className="bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full flex items-center">
+            <span className="bg-yellow-400 text-gray-800 text-xs font-bold px-3 py-1 rounded-full flex items-center">
               <FaCrown className="mr-1" /> BESTSELLER
             </span>
           )}
           {menuItem.isFavorite && (
-            <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center">
+            <span className="bg-red-400 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center">
               <FaHeart className="mr-1" /> FAVORITE
             </span>
           )}
           {menuItem.isSpicy && (
-            <span className="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center">
+            <span className="bg-orange-400 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center">
               <FaFire className="mr-1" /> PEDAS
             </span>
           )}
@@ -153,36 +153,36 @@ const MenuDetail = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-gray-800/50 backdrop-blur-md -mt-20 relative z-20 rounded-3xl p-6 shadow-xl"
+          className="bg-white -mt-20 relative z-20 rounded-3xl p-6 shadow-lg"
         >
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-3xl font-bold">{menuItem.name}</h1>
+              <h1 className="text-3xl font-bold text-gray-800">{menuItem.name}</h1>
               <div className="flex items-center mt-2">
                 <div className="flex">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <FaStar 
                       key={star} 
-                      className={`${star <= 4.5 ? 'text-yellow-400' : 'text-gray-500'} ${star === 5 ? 'text-gray-500' : ''}`} 
+                      className={`${star <= 4.5 ? 'text-yellow-400' : 'text-gray-300'} ${star === 5 ? 'text-gray-300' : ''}`} 
                     />
                   ))}
                 </div>
-                <span className="ml-2 text-yellow-400 font-medium">4.5</span>
-                <span className="ml-1 text-gray-400">(120)</span>
+                <span className="ml-2 text-yellow-500 font-medium">4.5</span>
+                <span className="ml-1 text-gray-500">(120)</span>
               </div>
             </div>
             <button 
               onClick={() => setIsLiked(!isLiked)}
-              className={`p-3 rounded-full ${isLiked ? 'bg-red-500 text-white' : 'bg-gray-700 text-gray-300'} transition-all`}
+              className={`p-3 rounded-full ${isLiked ? 'bg-red-400 text-white' : 'bg-gray-100 text-gray-400'} transition-all`}
             >
               <FaHeart />
             </button>
           </div>
           
-          <p className="mt-4 text-gray-300 text-lg">{menuItem.description}</p>
+          <p className="mt-4 text-gray-600 text-lg">{menuItem.description}</p>
           
-          <div className="mt-6 border-t border-gray-700 pt-6">
-            <h2 className="text-xl font-semibold mb-3">Pilih Ukuran Porsi</h2>
+          <div className="mt-6 border-t border-gray-200 pt-6">
+            <h2 className="text-xl font-semibold mb-3 text-gray-800">Pilih Ukuran Porsi</h2>
             <div className="flex gap-3">
               {(['small', 'medium', 'large'] as PortionSize[]).map(size => (
                 <button
@@ -190,8 +190,8 @@ const MenuDetail = () => {
                   onClick={() => setSelectedSize(size)}
                   className={`flex-1 py-3 px-4 rounded-xl border ${
                     selectedSize === size 
-                      ? 'border-accent bg-accent/20 text-accent' 
-                      : 'border-gray-600 bg-gray-700/50 text-gray-300'
+                      ? 'border-accent bg-accent/20 text-accent'
+                      : 'border-gray-200 bg-gray-50 text-gray-600'
                   } transition-all`}
                 >
                   {size === 'small' ? 'Kecil' : size === 'medium' ? 'Sedang' : 'Besar'}
@@ -201,8 +201,8 @@ const MenuDetail = () => {
           </div>
           
           {menuItem.isSpicy && (
-            <div className="mt-6 border-t border-gray-700 pt-6">
-              <h2 className="text-xl font-semibold mb-3">Pilih Level Kepedasan</h2>
+            <div className="mt-6 border-t border-gray-200 pt-6">
+              <h2 className="text-xl font-semibold mb-3 text-gray-800">Pilih Level Kepedasan</h2>
               <div className="flex flex-wrap gap-3">
                 {(['mild', 'medium', 'hot', 'extra'] as SpicyLevel[]).map(level => (
                   <button
@@ -210,40 +210,40 @@ const MenuDetail = () => {
                     onClick={() => setSpicyLevel(level)}
                     className={`flex-1 py-3 px-4 rounded-xl border ${
                       spicyLevel === level 
-                        ? 'border-orange-500 bg-orange-500/20 text-orange-400' 
-                        : 'border-gray-600 bg-gray-700/50 text-gray-300'
+                        ? 'border-orange-400 bg-orange-50 text-orange-500' 
+                        : 'border-gray-200 bg-gray-50 text-gray-600'
                     } transition-all flex items-center justify-center`}
                   >
                     {level === 'mild' && <span>Tidak Pedas</span>}
-                    {level === 'medium' && <span>Sedang <FaFire className="inline ml-1" /></span>}
-                    {level === 'hot' && <span>Pedas <FaFire className="inline ml-1" /><FaFire className="inline" /></span>}
-                    {level === 'extra' && <span>Super Pedas <FaFire className="inline ml-1" /><FaFire className="inline" /><FaFire className="inline" /></span>}
+                    {level === 'medium' && <span>Sedang <FaFire className="inline ml-1 text-orange-400" /></span>}
+                    {level === 'hot' && <span>Pedas <FaFire className="inline ml-1 text-orange-500" /><FaFire className="inline text-orange-500" /></span>}
+                    {level === 'extra' && <span>Super Pedas <FaFire className="inline ml-1 text-orange-600" /><FaFire className="inline text-orange-600" /><FaFire className="inline text-orange-600" /></span>}
                   </button>
                 ))}
               </div>
             </div>
           )}
           
-          <div className="mt-6 border-t border-gray-700 pt-6 flex justify-between items-center">
+          <div className="mt-6 border-t border-gray-200 pt-6 flex justify-between items-center">
             <div>
-              <p className="text-gray-400 text-sm">Harga</p>
-              <p className="text-2xl font-bold text-white">Rp {calculateTotalPrice().toLocaleString('id-ID')}</p>
+              <p className="text-gray-500 text-sm">Harga</p>
+              <p className="text-2xl font-bold text-gray-800">Rp {calculateTotalPrice().toLocaleString('id-ID')}</p>
             </div>
             
             <div className="flex items-center gap-4">
-              <div className="flex items-center bg-gray-700 rounded-full">
+              <div className="flex items-center bg-gray-100 rounded-full">
                 <button 
                   onClick={() => handleQuantityChange(-1)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-600 transition-colors"
+                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-200 transition-colors"
                 >
-                  <span className="text-2xl font-bold">-</span>
+                  <span className="text-2xl font-bold text-gray-600">-</span>
                 </button>
-                <span className="w-8 text-center">{quantity}</span>
+                <span className="w-8 text-center text-gray-800">{quantity}</span>
                 <button 
                   onClick={() => handleQuantityChange(1)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-600 transition-colors"
+                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-200 transition-colors"
                 >
-                  <span className="text-2xl font-bold">+</span>
+                  <span className="text-2xl font-bold text-gray-600">+</span>
                 </button>
               </div>
               
@@ -267,13 +267,13 @@ const MenuDetail = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-10"
           >
-            <h2 className="text-2xl font-bold mb-4">Menu Terkait</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">Menu Terkait</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {relatedItems.map(item => (
                 <motion.div
                   key={item.id}
                   whileHover={{ y: -5 }}
-                  className="bg-gray-800/50 rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                  className="bg-white rounded-xl overflow-hidden shadow-md cursor-pointer"
                   onClick={() => navigate(`/menu/${item.id}`)}
                 >
                   <div className="h-40 overflow-hidden relative">
@@ -283,16 +283,16 @@ const MenuDetail = () => {
                       className="w-full h-full object-cover transition-transform hover:scale-110"
                     />
                     {item.isBestseller && (
-                      <span className="absolute top-2 right-2 bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-full">
+                      <span className="absolute top-2 right-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded-full">
                         BESTSELLER
                       </span>
                     )}
                   </div>
                   <div className="p-4">
-                    <h3 className="font-bold text-lg truncate">{item.name}</h3>
-                    <p className="text-gray-400 text-sm mt-1 line-clamp-2">{item.description}</p>
+                    <h3 className="font-bold text-lg truncate text-gray-800">{item.name}</h3>
+                    <p className="text-gray-500 text-sm mt-1 line-clamp-2">{item.description}</p>
                     <div className="flex justify-between items-center mt-3">
-                      <span className="font-bold">Rp {item.price.toLocaleString('id-ID')}</span>
+                      <span className="font-bold text-gray-800">Rp {item.price.toLocaleString('id-ID')}</span>
                       <span className="text-accent">Lihat Detail</span>
                     </div>
                   </div>
@@ -310,7 +310,7 @@ const MenuDetail = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 flex items-center"
+            className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-green-400 text-white px-6 py-3 rounded-full shadow-lg z-50 flex items-center"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

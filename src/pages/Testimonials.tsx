@@ -84,7 +84,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white pb-16">
+    <div className="min-h-screen bg-secondary-warm text-gray-500 pb-16">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -120,21 +120,21 @@ const Testimonials = () => {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-8"
         >
-          <div className="flex bg-gray-800 rounded-full shadow-md p-1">
+          <div className="flex bg-white rounded-full shadow-md p-1">
             <button
               onClick={() => handleSortChange('newest')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${sortBy === 'newest'
-                  ? 'bg-accent text-white'
-                  : 'text-gray-300 hover:bg-gray-700'
+              className={`px-4 py-2 rounded-full text-sm text-gray-500 font-medium transition-all ${sortBy === 'newest'
+                ? 'bg-accent text-white'
+                : 'text-gray-400 hover:bg-gray-300'
                 }`}
             >
               Terbaru
             </button>
             <button
               onClick={() => handleSortChange('highest')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${sortBy === 'highest'
-                  ? 'bg-accent text-white'
-                  : 'text-gray-300 hover:bg-gray-700'
+              className={`px-4 py-2 rounded-full text-sm text-gray-500 font-medium transition-all ${sortBy === 'highest'
+                ? 'bg-accent text-white'
+                : 'text-gray-400 hover:bg-gray-300'
                 }`}
             >
               Rating Tertinggi
@@ -150,10 +150,10 @@ const Testimonials = () => {
             transition={{ duration: 0.6 }}
             className="relative mb-12"
           >
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-lg">
+            <div className="bg-white backdrop-blur-sm rounded-2xl shadow-lg">
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-accent">
+                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2">
                     <img
                       src={sortedTestimonials[activeIndex].avatar}
                       alt={sortedTestimonials[activeIndex].name}
@@ -161,10 +161,10 @@ const Testimonials = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white">
+                    <h3 className="font-bold text-gray-500">
                       {sortedTestimonials[activeIndex].name}
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-500 text-sm">
                       {sortedTestimonials[activeIndex].date}
                     </p>
                   </div>
@@ -180,7 +180,7 @@ const Testimonials = () => {
                   ))}
                 </div>
 
-                <p className="text-gray-300 italic">
+                <p className="text-gray-500 italic">
                   "{sortedTestimonials[activeIndex].content}"
                 </p>
               </div>
@@ -189,13 +189,13 @@ const Testimonials = () => {
             <div className="flex justify-center mt-4 gap-2">
               <button
                 onClick={prevTestimonial}
-                className="w-10 h-10 rounded-full bg-gray-800 shadow-md flex items-center justify-center text-white hover:bg-gray-700"
+                className="w-10 h-10 rounded-full bg-gray-600 shadow-md flex items-center justify-center text-white hover:bg-gray-700"
               >
                 <ChevronLeft size={20} />
               </button>
               <button
                 onClick={nextTestimonial}
-                className="w-10 h-10 rounded-full bg-gray-800 shadow-md flex items-center justify-center text-white hover:bg-gray-700"
+                className="w-10 h-10 rounded-full bg-gray-600 shadow-md flex items-center justify-center text-white hover:bg-gray-700"
               >
                 <ChevronRight size={20} />
               </button>
@@ -206,7 +206,7 @@ const Testimonials = () => {
                 <button
                   key={idx}
                   onClick={() => setActiveIndex(idx)}
-                  className={`w-2 h-2 mx-1 rounded-full ${idx === activeIndex ? "bg-accent" : "bg-gray-600"
+                  className={`w-2 h-2 mx-1 rounded-full ${idx === activeIndex ? "bg-accent" : "bg-gray-400"
                     }`}
                 />
               ))}
@@ -227,11 +227,11 @@ const Testimonials = () => {
                 key={testimonial.id}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
+                className="bg-secondary backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
               >
                 <div className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-accent">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2">
                       <img
                         src={testimonial.avatar}
                         alt={testimonial.name}
@@ -239,8 +239,8 @@ const Testimonials = () => {
                       />
                     </div>
                     <div>
-                      <h3 className="font-bold text-white">{testimonial.name}</h3>
-                      <p className="text-gray-400 text-sm">{testimonial.date}</p>
+                      <h3 className="font-bold text-gray-600">{testimonial.name}</h3>
+                      <p className="text-gray-500 text-sm">{testimonial.date}</p>
                     </div>
                   </div>
 
@@ -254,7 +254,7 @@ const Testimonials = () => {
                     ))}
                   </div>
 
-                  <p className="text-gray-300 italic">"{testimonial.content}"</p>
+                  <p className="text-gray-500 italic">"{testimonial.content}"</p>
                 </div>
               </motion.div>
             ))}
@@ -266,11 +266,11 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-lg p-8 mb-12"
+          className="bg-secondary backdrop-blur-sm rounded-2xl shadow-lg p-8 mb-12"
         >
           <div className="flex flex-col md:flex-row items-center">
             <div className="flex flex-col items-center md:w-1/3 mb-6 md:mb-0">
-              <h3 className="text-2xl font-bold text-white mb-4">Rating Keseluruhan</h3>
+              <h3 className="text-2xl font-bold text-gray-600 mb-4">Rating Keseluruhan</h3>
               <div className="flex items-baseline">
                 <span className="text-5xl font-bold text-accent mr-2">{averageRating}</span>
                 <span className="text-xl text-gray-500">/5</span>
@@ -284,12 +284,12 @@ const Testimonials = () => {
                   />
                 ))}
               </div>
-              <p className="text-gray-400 text-sm mt-2">
+              <p className="text-gray-500 text-sm mt-2">
                 Berdasarkan {testimonials.length} ulasan
               </p>
             </div>
 
-            <div className="bg-gray-700 h-32 w-px hidden md:block mx-8" />
+            <div className="bg-gray-400 h-32 w-px hidden md:block mx-8" />
 
             <div className="md:w-2/3">
               <div className="space-y-3">
@@ -300,18 +300,18 @@ const Testimonials = () => {
                   return (
                     <div key={rating} className="flex items-center">
                       <div className="flex items-center w-12">
-                        <span className="text-sm text-gray-300 mr-1">{rating}</span>
+                        <span className="text-sm text-gray-500 mr-1">{rating}</span>
                         <Star size={12} className="text-accent fill-accent" />
                       </div>
 
-                      <div className="flex-1 h-2 bg-gray-700 rounded-full mx-3">
+                      <div className="flex-1 h-2 bg-gray-600 rounded-full mx-3">
                         <div
                           className="h-2 bg-accent rounded-full"
                           style={{ width: `${percentage}%` }}
                         />
                       </div>
 
-                      <div className="w-10 text-right text-sm text-gray-400">
+                      <div className="w-10 text-right text-sm text-gray-500">
                         {count}
                       </div>
                     </div>
@@ -330,7 +330,7 @@ const Testimonials = () => {
           className="bg-gradient-to-br from-accent/80 to-accent rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto shadow-xl"
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Sudah Mencoba Masakan Bu Nani?</h2>
-          <p className="text-lg mb-8 max-w-lg mx-auto">Bagikan pengalaman Anda dan bantu kami terus meningkatkan kualitas pelayanan.</p>
+          <p className="text-lg mb-8 text-white max-w-lg mx-auto">Bagikan pengalaman Anda dan bantu kami terus meningkatkan kualitas pelayanan.</p>
 
           <motion.a
             whileHover={{ scale: 1.05 }}

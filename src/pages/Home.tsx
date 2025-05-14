@@ -334,7 +334,7 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="relative"
               >
-                <div className="bg-white rounded-xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="bg-white rounded-xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-gray-100 hover:bg-yellow-50">
                   <div className="bg-gray-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                     {step.icon}
                   </div>
@@ -372,7 +372,7 @@ const Home = () => {
       </section>
 
       {/* Location & Hours Section - Redesigned and modernized */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-white text-white">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row items-center">
             <motion.div 
@@ -384,13 +384,13 @@ const Home = () => {
             >
               <div className="mb-6">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Kunjungi Kami</h2>
-                <p className="text-gray-300 mb-8">
+                <p className="text-gray-500 mb-8">
                   Nikmati pengalaman makan langsung di tempat kami atau pesan untuk diantar ke lokasi Anda
                 </p>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                <div className="bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm">
+                <div className="bg-gray-600 p-6 rounded-xl backdrop-blur-sm">
                   <div className="flex items-start mb-4">
                     <FaMapMarkerAlt className="text-yellow-500 mt-1 mr-3" size={20} />
                     <div>
@@ -400,7 +400,7 @@ const Home = () => {
                   </div>
                 </div>
                 
-                <div className="bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm">
+                <div className="bg-gray-600 p-6 rounded-xl backdrop-blur-sm">
                   <div className="flex items-start">
                     <FaWhatsapp className="text-green-500 mt-1 mr-3" size={20} />
                     <div>
